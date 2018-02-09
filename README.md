@@ -1,5 +1,6 @@
 # Fibonacci-Python
 
+<img src="https://raw.githubusercontent.com/lamhotsimamora/Fibonacci-Python/master/screenshoot.png"></img>
 
 v 3.6.2 Python
 
