@@ -14,5 +14,5 @@ src/fibonacci.py
 
 
 ### Features
-1. Generate Fibonacci Number
+1. Generate Fibonacci Number (and / or ) Write Into File
 2. Check Number Is Fibonacci or Not 
