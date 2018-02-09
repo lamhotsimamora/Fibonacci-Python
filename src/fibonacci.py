@@ -22,16 +22,25 @@ def resultFibo(a):
     fibo = Fibonacci(a)
     result = fibo.generateFibonacci()  
     print(str(result))
-    showMenu()
+    ask = input('Do you want create into a file ? (Y/N) ')
+    try:
+        ask = str(ask).lower().strip()
+        if ask == 'y':
+            writeFile('fibonacci-'+str(a)+'.txt',str(result))
+        else:
+            showMenu()
+    except Exception as e:
+          showMenu()
 
 def processFibo(num):
     length = 120
     fibo = Fibonacci(length)
     res  = fibo.generateFibonacci()
+    str_dis =  'This number '+str(num)+' is '
     if num in res:
-        print('Number '+str(num)+' is fibonacci')
+        print(str_dis+'fibonacci')
     else:
-        print('Number '+str(num)+' is not fibonacci')
+        print(str_dis+'not fibonacci')
     showMenu()
 
 def createFibo():
@@ -47,6 +56,14 @@ def createFibo():
         except ValueError:
             check = True
             createFibo() 
+
+def writeFile(f,t):
+    fl = open(f,'w')
+    fl.write(t)
+    fl.close()
+    print('')
+    print('Your file { '+f+' } has been created !')
+    showMenu() 
 
 def checkFibo():
     os.system('cls')
@@ -79,8 +96,12 @@ def showMenu():
                checkFibo()
                break
             elif get == 3:
-                about()
+                os.system('cls')
+                showMenu()
                 break
+            elif get == 4: 
+               about()
+               break
             else:
                showMenu()
         except ValueError:
@@ -94,13 +115,14 @@ def about():
     print('https://github.com/lamhotsimamora')
     showMenu()
 
-print("*********************************************")
-print("================ SELECT MENU ================")
-print("*********************************************")
-print("1.  Generate Fibonacci                       ")
-print("2.  Check Fibonacci Number                   ")
-print("3.  About                                    ")
-print("*********************************************")
+print("**********************************************")
+print("=================== MENU =====================")
+print("**********************************************")
+print("1.  Generate Fibonacci                        ")
+print("2.  Check Fibonacci Number                    ")
+print("3.  Clear Screen                              ")
+print("4.  About                                     ")
+print("**********************************************")
 showMenu()
 
 
