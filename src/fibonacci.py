@@ -7,28 +7,27 @@ class Fibonacci:
     def __init__(self,_length):
         self._length = _length
 
-    def newFibonacci(self):
+    def generateFibonacci(self):
         start = 0
         data = []
         for i in range(self._length):
-        	if i==0:
-        		data.append(start)
-        		start = start + 1 
-        	else:
-        		data.append(start)
-        		start = data[i] + data[i-1]
+            data.append(start)
+            if i==0 :
+                start = start + 1 
+            else:
+                start = data[i] + data[i-1]
         return data 
 
 def resultFibo(a):
     fibo = Fibonacci(a)
-    result = fibo.newFibonacci()  
+    result = fibo.generateFibonacci()  
     print(str(result))
     showMenu()
 
 def processFibo(num):
     length = 120
     fibo = Fibonacci(length)
-    res  = fibo.newFibonacci()
+    res  = fibo.generateFibonacci()
     if num in res:
         print('Number '+str(num)+' is fibonacci')
     else:
